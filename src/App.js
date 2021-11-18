@@ -5,11 +5,11 @@ import { ThemesStore } from './context/ThemeProvider'
 
 function App() {
 	const themeCtx = useContext(ThemesStore)
-	const selectedTheme = themeCtx.selectedTheme
+	const { selectedTheme, changeTheme, themes } = themeCtx
 	const isFirstRun = useRef(true)
 
 	useEffect(() => {
-		let storedTheme = localStorage.getItem('theme')
+		let storedTheme = localStorage.getItem('themeColor')
 		if (storedTheme && isFirstRun.current) {
 			isFirstRun.current = false
 			document.documentElement.style.setProperty(
@@ -21,13 +21,17 @@ function App() {
 				'--text-color',
 				selectedTheme.color,
 			)
-			localStorage.setItem('theme', selectedTheme.name)
+			localStorage.setItem('themeColor', selectedTheme.color)
 		}
 	}, [selectedTheme])
 
 	return (
 		<div className='App'>
-			<Navbar {...themeCtx} />
+			<Navbar
+				selectedTheme={selectedTheme}
+				themes={themes}
+				changeTheme={changeTheme}
+			/>
 			<div className='text'>hello,world!</div>
 		</div>
 	)

@@ -1,7 +1,28 @@
 import './Navbar.css'
 
 const Navbar = ({ selectedTheme, themes, changeTheme }) => {
-	// console.log('selectedTheme', selectedTheme)
+	console.log('selectedTheme', selectedTheme)
+
+	// const isFirstRun = useRef(true)
+
+	// useEffect(() => {
+	// let storedTheme = localStorage.getItem('themeColor')
+	// 	if (storedTheme && isFirstRun.current) {
+	// 		isFirstRun.current = false
+	// 		document.documentElement.style.setProperty(
+	// 			'--text-color',
+	// 			storedTheme,
+	// 		)
+	// 	} else {
+	// 		document.documentElement.style.setProperty(
+	// 			'--text-color',
+	// 			selectedTheme.color,
+	// 		)
+	// 		localStorage.setItem('themeColor', selectedTheme.color)
+	// 		localStorage.setItem('themeName', selectedTheme.name)
+	// 	}
+	// }, [selectedTheme])
+
 	return (
 		<nav className='navbar navbar-expand-lg navbar-light shadow-lg'>
 			<div className='container'>
@@ -33,6 +54,7 @@ const Navbar = ({ selectedTheme, themes, changeTheme }) => {
 									aria-expanded='false'>
 									<span id='theme-name'>
 										{selectedTheme.name}
+										{/*BUG title is wrong*/}
 									</span>
 									<div id='theme-dropdown-circle'></div>
 								</span>
