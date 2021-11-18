@@ -1,0 +1,31 @@
+.navbar .container .navbar-brand {
+	color: var(--text-color);
+}
+
+.dropdown .dropdown-menu.show {
+	min-width: fit-content;
+}
+
+#navbarDropdown,
+#dropdown-item-wrapper {
+	display: flex;
+	width: 100px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#navbarDropdown{
+    padding: 4px 16px;
+}
+.nav-link.dropdown-toggle::after {
+	display: none;
+}
+
+#theme-dropdown-circle {
+	width: 15px;
+	height: 15px;
+	background-color: var(--text-color);
+	display: inline-block;
+	border-radius: 50%;
+	border: 1px solid;
+}
