@@ -9,21 +9,26 @@ function App() {
 	const isFirstRun = useRef(true)
 
 	useEffect(() => {
-		let storedTheme = localStorage.getItem('themeColor')
-		if (storedTheme && isFirstRun.current) {
+		let storedThemeColor = localStorage.getItem('themeColor')
+		let storedThemeName = localStorage.getItem('themeName')
+
+		if (storedThemeColor && isFirstRun.current) {
 			isFirstRun.current = false
+			changeTheme(storedThemeName)
 			document.documentElement.style.setProperty(
 				'--text-color',
-				storedTheme,
+				storedThemeColor,
 			)
 		} else {
 			document.documentElement.style.setProperty(
 				'--text-color',
 				selectedTheme.color,
 			)
-			localStorage.setItem('themeColor', selectedTheme.color)
 		}
-	}, [selectedTheme])
+
+		localStorage.setItem('themeColor', selectedTheme.color)
+		localStorage.setItem('themeName', selectedTheme.name)
+	}, [changeTheme, selectedTheme])
 
 	return (
 		<div className='App'>
