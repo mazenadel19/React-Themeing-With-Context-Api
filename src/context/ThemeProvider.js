@@ -5,7 +5,7 @@ export const ThemesStore = createContext({})
 const ThemesProvider = ({ children }) => {
 	const [selectedTheme, setSelectedTheme] = useState(themes[0])
 
-	const changeTheme = (name = '') => {
+	const changeTheme = (name = 'Purple') => {
 		const selectedTheme = themes.find(theme => theme.name === name)
 		setSelectedTheme(selectedTheme)
 	}
