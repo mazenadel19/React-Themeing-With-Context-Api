@@ -6,29 +6,22 @@ import { ThemesStore } from './context/ThemeProvider'
 function App() {
 	const themeCtx = useContext(ThemesStore)
 	const { selectedTheme, changeTheme, themes } = themeCtx
+
 	const isFirstRun = useRef(true)
 
 	useEffect(() => {
-		let storedThemeColor = localStorage.getItem('themeColor')
 		let storedThemeName = localStorage.getItem('themeName')
+		const storedTheme = themes.find(theme => theme.name === storedThemeName)
 
-		if (storedThemeColor && isFirstRun.current) {
+		if (storedThemeName && isFirstRun.current) {
 			isFirstRun.current = false
-			changeTheme(storedThemeName)
-			document.documentElement.style.setProperty(
-				'--text-color',
-				storedThemeColor,
-			)
+			changeTheme(storedTheme.name)
+			document.documentElement.style.setProperty('--text-color',storedTheme.color)
 		} else {
-			document.documentElement.style.setProperty(
-				'--text-color',
-				selectedTheme.color,
-			)
+			document.documentElement.style.setProperty('--text-color',selectedTheme.color)
 		}
-
-		localStorage.setItem('themeColor', selectedTheme.color)
 		localStorage.setItem('themeName', selectedTheme.name)
-	}, [changeTheme, selectedTheme])
+	}, [changeTheme, selectedTheme, themes])
 
 	return (
 		<div className='App'>

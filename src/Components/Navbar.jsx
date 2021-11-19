@@ -1,7 +1,6 @@
 import './Navbar.css'
 
 const Navbar = ({ selectedTheme, themes, changeTheme }) => {
-	console.log('selectedTheme', selectedTheme)
 
 
 	return (
