@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef } from 'react'
 import './App.css'
-import Navbar from './Components/Navbar'
+import Navbar from './components/Navbar'
 import { ThemesStore } from './context/ThemeProvider'
 
 function App() {

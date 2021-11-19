@@ -1,8 +1,6 @@
 import './Navbar.css'
 
 const Navbar = ({ selectedTheme, themes, changeTheme }) => {
-
-
 	return (
 		<nav className='navbar navbar-expand-lg navbar-light shadow-lg'>
 			<div className='container'>
@@ -25,6 +23,7 @@ const Navbar = ({ selectedTheme, themes, changeTheme }) => {
 					<ul className='navbar-nav me-auto mb-2 mb-lg-0'></ul>
 					<form className='d-flex'>
 						<ul className='navbar-nav me-auto mb-2 mb-lg-0'>
+							{/*** This could be extracted into it's own reusable component ***/}
 							<li className='nav-item dropdown'>
 								<span
 									className='nav-link dropdown-toggle'
@@ -68,6 +67,7 @@ const Navbar = ({ selectedTheme, themes, changeTheme }) => {
 									)}
 								</ul>
 							</li>
+							{/*** This could be extracted into it's own reusable component ***/}
 						</ul>
 					</form>
 				</div>
