@@ -1,6 +1,6 @@
 # Themeing With Context Api
 
-This repo is for teaching how to use Context API to do theming in React. It goes along with my [Medium Post](https://mazenadel19.medium.com/theming-made-easy-with-context-api-and-local-storage-a0f8fc634ae8).
+This repository is designed to teach how to use the Context API for implementing theming in React. It complements my [Medium Post](https://mazenadel19.medium.com/theming-made-easy-with-context-api-and-local-storage-a0f8fc634ae8), where I explore how to simplify theming using Context API and local storage.
 
 
 ## 🚀 Getting Started
